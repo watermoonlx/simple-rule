@@ -3,8 +3,9 @@ package quickstart;
 import com.github.watermoonlx.simpleRule.core.Rule;
 import com.github.watermoonlx.simpleRule.core.RuleCheckResult;
 
-@Rule.Descriptor("订单总金额必须小于1000")
+@Rule.Descriptor(name = "金额上限", value = "订单总金额必须小于1000")
 public class AmountMustLessThan1000 extends Rule<Order> {
+
     @Override
     public RuleCheckResult check(Order target) {
         if (target.getAmount() < 1000) {

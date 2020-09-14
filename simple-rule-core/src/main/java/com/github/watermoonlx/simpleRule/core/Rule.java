@@ -133,6 +133,7 @@ public abstract class Rule<T> {
     }
     //endregion
 
+    //region 导出图片
     public void drawImage(@NonNull OutputStream outputStream) throws IOException {
         this.imageGenerator.generate(this, outputStream);
     }
@@ -148,6 +149,7 @@ public abstract class Rule<T> {
     public void drawImageWithResult(@NonNull RuleCheckResult result, @NonNull String filePath) throws IOException {
         this.imageGenerator.generateWithResult(this, result, filePath);
     }
+    //endregion
 
     private void init() {
         Descriptor desc = this.getClass().getAnnotation(Descriptor.class);
