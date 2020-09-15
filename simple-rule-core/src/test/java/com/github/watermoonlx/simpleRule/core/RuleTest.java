@@ -17,6 +17,8 @@ public class RuleTest {
 
         @Setter
         private int delay = 0;
+        @Setter
+        private String passStr = "pass";
 
         public MockRule() {
         }
@@ -41,14 +43,12 @@ public class RuleTest {
                     e.printStackTrace();
                 }
             }
-            if (target.equalsIgnoreCase("pass")) {
-                return this.pass("验证通过");
+            if (target.equalsIgnoreCase(this.passStr)) {
+                return this.pass("通过");
             } else if (target.equalsIgnoreCase("warning")) {
                 return this.warning("警告");
-            } else if (target.equalsIgnoreCase("error")) {
-                return this.error("错误");
             } else {
-                throw new RuntimeException("非法字符");
+                return this.error("未通过");
             }
         }
     }
@@ -258,6 +258,19 @@ public class RuleTest {
 
         RuleCheckResult result2 = rs1.check("error");
         rs1.drawImageWithResult(result2, this.getRandomPath());
+
+        rule4.setPassStr("Don't Pass");
+        SerialRuleSet<String> ruleSet = Rule.serial(
+                rule1,
+                Rule.parallel(
+                        Rule.parallel(rule2,
+                                Rule.serial(rule3, rule4),
+                                Rule.parallel(rule5, rule6)),
+                        rule7
+                )
+        );
+        RuleCheckResult result3 = ruleSet.check("pass");
+        ruleSet.drawImageWithResult(result3, this.getRandomPath());
     }
 
     private String getRandomPath() {

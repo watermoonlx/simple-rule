@@ -143,11 +143,11 @@ public class CreateTimeMustIn2020 extends Rule<Order> {
 
 其中第5步导出的图片如下所示，其中绿色表示通过，红色表示未通过，灰色表示未执行。
 
-<img src="./images/orderRules.png" alt="orderRules" width="600"/>
+<img src="./docs/images/orderRules.png" alt="orderRules" width="600"/>
 
 ## Documentation
 
 * [创建规则](./docs/创建规则.md)
 * [组合规则](./docs/组合规则.md)
-* 导出图片
-* 并行验证
+* [并行验证](./docs/并行验证.md)
+* [流程图](./docks/流程图.md)
