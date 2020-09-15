@@ -150,4 +150,4 @@ public class CreateTimeMustIn2020 extends Rule<Order> {
 * [创建规则](./docs/创建规则.md)
 * [组合规则](./docs/组合规则.md)
 * [并行验证](./docs/并行验证.md)
-* [流程图](./docks/流程图.md)
+* [流程图](./docs/流程图.md)
