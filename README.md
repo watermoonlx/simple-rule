@@ -425,7 +425,7 @@ public class OrderRuleSet extends SerialRuleSet<Order> {
 
 结果如下：
 
-<img src="./images/不带执行结果的流程图.png" alt="不带执行结果的流程图" width="600"/>
+<img src="./docs/images/不带执行结果的流程图.png" alt="不带执行结果的流程图" width="600"/>
 
 **带结果的流程图**则需要先得到执行结果，然后再将其作为参数调用`drawImageWithResult`：
 
@@ -446,4 +446,4 @@ public class OrderRuleSet extends SerialRuleSet<Order> {
 
 结果如下：
 
-<img src="./images/带执行结果的流程图.png" alt="带执行结果的流程图" width="600"/>
+<img src="./docs/images/带执行结果的流程图.png" alt="带执行结果的流程图" width="600"/>
